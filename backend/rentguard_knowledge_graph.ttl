@@ -1,0 +1,61 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rent: <https://rentguard.ai/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rent:OfficialSource a rdfs:Class .
+
+rent:RentalConcept a rdfs:Class .
+
+rent:RentalRule a rdfs:Class .
+
+rent:appliesTo a rdf:Property .
+
+rent:hasRule a rdf:Property .
+
+rent:jurisdiction a rdf:Property .
+
+rent:ruleDescription a rdf:Property .
+
+rent:sourceNote a rdf:Property .
+
+rent:sourceURL a rdf:Property .
+
+rent:supportedBy a rdf:Property .
+
+<https://www.gov.uk/tenancy-deposit-protection> a rent:OfficialSource ;
+    rdfs:label "GOV.UK tenancy deposit protection guidance" ;
+    rent:sourceURL "https://www.gov.uk/tenancy-deposit-protection"^^xsd:anyURI .
+
+rent:DepositLimitGuidance a rent:RentalRule ;
+    rdfs:label "Tenancy deposit limit guidance" ;
+    rent:appliesTo rent:TenancyDeposit ;
+    rent:ruleDescription "Official guidance describes a maximum of five weeks' rent for annual rent below £50,000, and six weeks for the applicable higher rent band. Verify the current rules, tenancy type and exceptions before assessing a listing." ;
+    rent:supportedBy <https://www.gov.uk/assured-periodic-tenancies-tenants/rent-in-advance-and-deposits> .
+
+rent:EPC a rent:RentalConcept ;
+    rdfs:label "Energy Performance Certificate (EPC)" .
+
+rent:EPCAvailabilityGuidance a rent:RentalRule ;
+    rdfs:label "Residential EPC availability guidance" ;
+    rent:appliesTo rent:EPC ;
+    rent:ruleDescription "Official residential EPC guidance describes requirements for making an EPC available when a property is marketed or rented, subject to applicable exceptions. Check the current rules and property circumstances." ;
+    rent:supportedBy <https://www.gov.uk/government/publications/energy-performance-certificates-for-the-construction-sale-and-let-of-dwellings/a-guide-to-energy-performance-certificates-for-the-marketing-sale-and-let-of-dwellings> .
+
+rent:TenancyDeposit a rent:RentalConcept ;
+    rdfs:label "Tenancy deposit" .
+
+<https://www.gov.uk/assured-periodic-tenancies-tenants/rent-in-advance-and-deposits> a rent:OfficialSource ;
+    rdfs:label "GOV.UK: Assured periodic tenancies — deposits" ;
+    rent:hasRule rent:DepositLimitGuidance ;
+    rent:jurisdiction "England" ;
+    rent:sourceNote "Official tenant guidance; check current tenancy type and rent band." ;
+    rent:sourceURL "https://www.gov.uk/assured-periodic-tenancies-tenants/rent-in-advance-and-deposits"^^xsd:anyURI .
+
+<https://www.gov.uk/government/publications/energy-performance-certificates-for-the-construction-sale-and-let-of-dwellings/a-guide-to-energy-performance-certificates-for-the-marketing-sale-and-let-of-dwellings> a rent:OfficialSource ;
+    rdfs:label "GOV.UK: Energy Performance Certificates for dwellings" ;
+    rent:hasRule rent:EPCAvailabilityGuidance ;
+    rent:jurisdiction "England and Wales" ;
+    rent:sourceNote "Guidance last updated 11 December 2017; verify current requirements." ;
+    rent:sourceURL "https://www.gov.uk/government/publications/energy-performance-certificates-for-the-construction-sale-and-let-of-dwellings/a-guide-to-energy-performance-certificates-for-the-marketing-sale-and-let-of-dwellings"^^xsd:anyURI .
+

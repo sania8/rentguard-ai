@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentGuard AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="logo">RG</div>
+      <div>
+        <h1>RentGuard AI</h1>
+        <p class="subtitle">Your rental listing checker</p>
+      </div>
+    </header>
+
+    <p class="intro">
+      Check a rental listing for terms that may need further review.
+    </p>
+
+    <button id="analyseButton">Analyse this listing</button>
+
+    <p id="status" role="status">Ready to analyse a webpage.</p>
+
+    <section id="results" hidden>
+      <h2>Extracted page text</h2>
+      <p id="pageTitle" class="page-title"></p>
+      <pre id="pageText"></pre>
+    </section>
+
+    <footer>Early prototype · Not legal advice</footer>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

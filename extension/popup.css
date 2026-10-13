@@ -1,0 +1,212 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 360px;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f8fafc;
+}
+
+.container {
+  padding: 18px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #173f35;
+  color: white;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 19px;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+.intro {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 20px 0 14px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #17634e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #104c3c;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#status {
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+#results {
+  margin-top: 16px;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+/* Extracted listing details */
+#results > h2 {
+  margin-bottom: 8px;
+}
+
+.page-title {
+  font-size: 12px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+#results pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 12px;
+  margin: 8px 0 16px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font: 12px/1.6 Arial, sans-serif;
+  color: #334155;
+}
+
+/* Analysis report */
+#rentguard-report {
+  margin-top: 18px;
+}
+
+#rentguard-report > h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: #173f35;
+}
+
+#rentguard-report > p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.finding-card {
+  margin: 12px 0;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #94a3b8;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.finding-card h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #1f2937;
+}
+
+.finding-card p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #475569;
+}
+
+/* Finding labels */
+.finding-level {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  color: #475569 !important;
+  font-size: 10px !important;
+  font-weight: bold;
+}
+
+.finding-information {
+  border-left-color: #94a3b8;
+}
+
+.finding-needs_review {
+  border-left-color: #d97706;
+  background: #fffbeb;
+}
+
+.finding-needs_review .finding-level {
+  background: #fef3c7;
+  color: #92400e !important;
+}
+
+.finding-potential_concern {
+  border-left-color: #dc2626;
+  background: #fef2f2;
+}
+
+.finding-potential_concern .finding-level {
+  background: #fee2e2;
+  color: #991b1b !important;
+}
+
+/* Evidence and suggested action */
+.finding-card p:first-of-type:not(.finding-level) {
+  margin-top: 10px;
+}
+
+.finding-card p:last-child {
+  margin-bottom: 0;
+}
+
+#rentguard-report .report-disclaimer {
+  margin-top: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+footer {
+  margin-top: 18px;
+  color: #94a3b8;
+  font-size: 10px;
+  text-align: center;
+}
